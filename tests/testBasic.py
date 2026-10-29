@@ -15,7 +15,7 @@ class TestParser(unittest.TestCase):
 
     def test_collection_with_comments(self):
         text = "; 1\n#####\n#@$.#\n#####\n\n; 2\n#####\n#@*.#\n#####\n"
-        # el segundo nivel es inválido (2 metas/1 caja) -> debe fallar claro
+        # Level 2 is invalid (2 goals / 1 box) -> should fail with a clear error message.
         with self.assertRaises(ValueError):
             parse_collection(text)
 
@@ -34,7 +34,7 @@ class TestMoves(unittest.TestCase):
         lv = parse_level(SMALL)
         s = apply_moves(lv, lv.initial, "R")
         with self.assertRaises(ValueError):
-            apply_moves(lv, s, "R")  # caja contra muro
+            apply_moves(lv, s, "R")  # box againts wall
 
     def test_box_against_box_illegal(self):
         lv = parse_level(["######", "#@$$.#", "#  . #", "######"])

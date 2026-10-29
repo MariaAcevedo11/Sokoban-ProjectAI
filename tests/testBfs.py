@@ -21,7 +21,7 @@ class TestBFS(unittest.TestCase):
         lv = parse_level(SMALL)
         r = bfs(lv)
         self.assertTrue(r.solved)
-        self.assertEqual(len(r.solution), 6)   # óptimo calculado a mano
+        self.assertEqual(len(r.solution), 6)   # Manually calculated optimal solution.
         self.assertTrue(is_valid_solution(lv, r.solution))
 
     def test_unsolvable_exhausts(self):
@@ -37,8 +37,8 @@ class TestBFS(unittest.TestCase):
 
     def test_validator_rejects_bad_solutions(self):
         lv = parse_level(SMALL)
-        self.assertFalse(is_valid_solution(lv, "uuuu"))   # no resuelve
-        self.assertFalse(is_valid_solution(lv, "LLLL"))   # movimiento ilegal
+        self.assertFalse(is_valid_solution(lv, "uuuu"))   # doesn't solve
+        self.assertFalse(is_valid_solution(lv, "LLLL"))   # illegal move
 
 
 if __name__ == "__main__":

@@ -37,11 +37,11 @@ def apply_moves(level: Level, state: State, moves: str) -> State:
     for ch in moves:
         d = DIRS.get(ch.upper())
         if d is None:
-            raise ValueError(f"Acción desconocida: {ch!r}")
+            raise ValueError(f"Uknown action: {ch!r}")
         for action, nxt in successors(level, state):
             if action.upper() == ch.upper():
                 state = nxt
                 break
         else:
-            raise ValueError(f"Movimiento ilegal {ch!r} desde {state.player}")
+            raise ValueError(f"Illegal move {ch!r} from {state.player}")
     return state
