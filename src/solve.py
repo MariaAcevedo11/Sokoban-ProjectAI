@@ -7,12 +7,12 @@ Example:
 import argparse
 import sys
 
-from .astar import astar_manhattan
+from .astar import astar_deadlock, astar_manhattan
 from .bfs import bfs
 from .parser import load_file
 from .validator import is_valid_solution
 
-ALGOS = {"bfs": bfs, "astar": astar_manhattan}  # astar_dd (deadlock pruning) coming next
+ALGOS = {"bfs": bfs, "astar": astar_manhattan, "astar_dd": astar_deadlock}
 
 
 def main(argv=None):

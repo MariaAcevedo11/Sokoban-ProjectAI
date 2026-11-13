@@ -1,0 +1,21 @@
+Levels: 30
+
+Levels solved within the budget:
+  bfs        23/30 ( 76.7%)   valid solutions: 23/23
+  astar      24/30 ( 80.0%)   valid solutions: 24/24
+  astar_dd   27/30 ( 90.0%)   valid solutions: 27/27
+
+A* vs A*+deadlock on the 24 levels BOTH solved:
+  total nodes   A*: 6,466,767   A*+dd: 880,620   reduction: 86.4%
+  median nodes  A*: 167,496   A*+dd: 17,620
+  levels where A*+dd expanded MORE nodes: 0 []
+  levels where solution length differs (should be 0): 0 []
+
+Hypothesis (proposal criterion: A*+dd solves more levels OR expands fewer nodes):
+  more levels solved: True (27 vs 24);  fewer nodes: True
+  => SUPPORTED
+
+Unsolved levels and why (budget = node limit, timeout = time cap):
+  bfs       [('microban_95', 'budget'), ('microban_105', 'budget'), ('microban_115', 'budget'), ('microban_130', 'budget'), ('microban_140', 'budget'), ('microban_145', 'budget'), ('microban_150', 'budget')]
+  astar     [('microban_105', 'budget'), ('microban_115', 'budget'), ('microban_130', 'budget'), ('microban_140', 'budget'), ('microban_145', 'budget'), ('microban_150', 'budget')]
+  astar_dd  [('microban_105', 'budget'), ('microban_145', 'budget'), ('microban_150', 'budget')]

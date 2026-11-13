@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Levels solved within the 1M-node budget. Node statistics use only the 23 levels solved by all three algorithms.}
+\label{tab:solved}
+\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+Algorithm & Solved & Valid & Median nodes & Total nodes \\
+\midrule
+BFS & 23/30 (77\%) & 23/23 & 340{,}515 & 7{,}079{,}531 \\
+A* (Manhattan) & 24/30 (80\%) & 24/24 & 186{,}736 & 6{,}345{,}158 \\
+A* + deadlock & 27/30 (90\%) & 27/27 & 23{,}871 & 870{,}736 \\
+\bottomrule
+\end{tabular}
+\end{table}

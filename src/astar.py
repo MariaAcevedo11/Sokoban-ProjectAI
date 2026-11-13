@@ -83,3 +83,10 @@ def astar_manhattan(level: Level, node_limit: int = 1_000_000,
                     max_seconds: Optional[float] = None) -> Result:
     """A* with the Manhattan assignment heuristic and no pruning."""
     return astar(level, node_limit, max_seconds, dead_squares=None)
+
+def astar_deadlock(level: Level, node_limit: int = 1_000_000,
+                   max_seconds: Optional[float] = None) -> Result:
+    """A* with the Manhattan heuristic plus dead-square pruning (proposed method)."""
+    from .deadlock import compute_dead_squares
+    return astar(level, node_limit, max_seconds,
+                 dead_squares=compute_dead_squares(level))
